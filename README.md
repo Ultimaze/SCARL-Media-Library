@@ -1,2 +1,2 @@
-# SCARL-Player
-HTML5 WebApp Multimedia-Player
+# SCARL-Mediathek
+HTML5 WebApp Mediathek
