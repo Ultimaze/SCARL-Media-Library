@@ -12,3 +12,12 @@
 */
 
 //  Initialization
+(function () {
+
+    //  Declaration of Vriables
+    var html_start,
+        html_mainmenu,
+        html_video,
+        html_audio;
+
+}());
