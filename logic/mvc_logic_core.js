@@ -15,9 +15,27 @@
 (function () {
 
     //  Declaration of Vriables
-    var html_start,
-        html_mainmenu,
-        html_video,
-        html_audio;
+    var htmlStart,
+        htmlMainmenu,
+        htmlVideo,
+        htmlAudio;
+
+    //  Declaration of Functions
+
+    function addElementToRoot(element, root) {
+        root.appendChild(element);
+    }
+
+    function removeElementFromRoot(element, root) {
+        var newElement = document.cloneNode(element);
+        root.replaceChild(newElement, element);
+        root.removeChild(newElement);
+    }
+
+
+
+    //  Fade out from start
+
+
 
 }());
