@@ -39,7 +39,9 @@
     htmlVideoLibraryPlayerSiteBody = '';
     htmlAudioLibraryPlayerSiteBody = '';
 
-    // Initialize variables for html
+    // Initialize variables for
+
+    // Initialize variables for
 
 
 }());
