@@ -15,13 +15,13 @@
 (function () {
 
     //  Declaration of Vriables
-    var htmlStart,
-        htmlMainmenu,
-        htmlVideo,
-        htmlAudio;
+    var htmlStartSite,
+        htmlImpressumSiteBodyToSection,
+        htmlLibraryBodyToSection,
+        htmlVideoLibraryPlayerSiteBody,
+        htmlAudioLibraryPlayerSiteBody;
 
     //  Declaration of Functions
-
     function addElementToRoot(element, root) {
         root.appendChild(element);
     }
@@ -32,10 +32,14 @@
         root.removeChild(newElement);
     }
 
+    // Initialize variables for html body and section
+    htmlStartSite = '';
+    htmlLibraryBodyToSection = '';
+    htmlImpressumSiteBodyToSection = '';
+    htmlVideoLibraryPlayerSiteBody = '';
+    htmlAudioLibraryPlayerSiteBody = '';
 
-
-    //  Fade out from start
-
+    // Initialize variables for html
 
 
 }());
