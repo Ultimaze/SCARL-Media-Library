@@ -28,6 +28,10 @@
         parent.removeChild(clonedChild);
     }
 
+    function sendRequestToHttpServer() {
+
+    }
+
     // Initialize variables for html body and section
     htmlStartSite = '';
     htmlLibraryBodyToSection = '';
