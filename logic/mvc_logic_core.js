@@ -22,14 +22,10 @@
         htmlAudioLibraryPlayerSiteBody;
 
     //  Declaration of Functions
-    function addElementToRoot(element, root) {
-        root.appendChild(element);
-    }
-
-    function removeElementFromRoot(element, root) {
-        var newElement = document.cloneNode(element);
-        root.replaceChild(newElement, element);
-        root.removeChild(newElement);
+    function removeChildFromParent(child, parent) {
+        var clonedChild = document.cloneNode(child);
+        parent.replaceChild(clonedChild, child);
+        parent.removeChild(clonedChild);
     }
 
     // Initialize variables for html body and section
