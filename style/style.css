@@ -1,0 +1,119 @@
+/*
+/*Festlegung der Boxeigenschaften für alle Elemente, weil /*diese nicht vererbt werden.
+*/
+
+*,* ::before,* ::after{
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+    border: 0px solid gold;
+}
+
+.top div{
+    /*mit padding vom Rand entfernen,
+    durch box-sizing: borderbox,
+    kann das padding angepasst werden,
+    ohne daß sich die Gesamtgröße der box verändert.*/
+    padding: 3% 3%;
+    /*inline-block erlaubt, die Elemente nebeneinanderzustellen, und trotzdem Größenangaben und vertical-align zu zulassen, was sonst nur bei Blockelementen erlaubt ist.*/
+    display: inline-block;
+    /*eigentlich würde man denken, 3 Elemente benötigen je 33,3% Platz, aber vertikale margins kollabieren nicht, deshalb braucht man ein wenig extra Platz von 1%*/
+    width: 32%;
+    vertical-align: middle;
+}
+
+.top div:last-child{
+    text-align: right;
+}
+
+
+body{
+    width: 100%;
+    height: 100%;
+    background-color: #DADADA;
+    font-family: helvetica, arial, tahoma, sans-serif;
+    font-size: 100.1%;
+    color: #FFF;
+    margin-top: 22%;
+}
+#startlogo{
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left:0;
+    bottom:0;
+    right:0;
+}
+
+.top{
+    position:fixed;
+    width:100%;
+    background-color: #B2B2B2;
+    padding: 4.5%;
+    left:0;
+    top:0;
+
+}
+#einstellung,#suche,#logo{
+    display: inline-block;
+    vertical-align: middle;
+    width: 10%
+}
+
+/*
+#einstellung{
+    width:8%;
+    margin-left: 0.2%;
+
+}
+#suche{
+    width: 10%;
+    margin-bottom: 1.2%;
+    float: right;
+}
+#logo{
+    width:17%;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left:0;
+    bottom:0;
+    right:0;
+}
+*/
+#logo{
+    width:17%;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left:0;
+    bottom:0;
+    right:0;
+}
+
+
+
+@media only screen and (max-width: 480px)
+{
+    #startlogo{
+        width:170px;
+    }
+    .inhalt{
+        margin-top: 35%;
+    }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 481px)
+{
+    #startlogo{
+        width:370px;
+    }
+    .inhalt{
+        margin-top: 35%;
+    }
+}
+@media only screen and (min-width: 480px) and (max-width : 1024px)
+and (orientation : landscape) {
+
+
+}
