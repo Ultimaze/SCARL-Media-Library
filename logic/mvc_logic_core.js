@@ -19,7 +19,8 @@
         htmlImpressumSiteBodyToSection,
         htmlLibraryBodyToSection,
         htmlVideoLibraryPlayerSiteBody,
-        htmlAudioLibraryPlayerSiteBody;
+        htmlAudioLibraryPlayerSiteBody,
+        htmlStartLogo;
 
     //  Declaration of Functions
     function removeChildFromParent(child, parent) {
@@ -36,9 +37,12 @@
     htmlVideoLibraryPlayerSiteBody = '';
     htmlAudioLibraryPlayerSiteBody = '';
 
-    // Initialize variables for
+    // Initialize variables for DOM-Selection
+    htmlStartLogo = document.getElementById("startlogo");
 
-    // Initialize variables for
+    // Initialize event handler
+
+
 
 
 }());
