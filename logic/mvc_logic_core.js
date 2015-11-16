@@ -55,12 +55,26 @@
         parent.appendChild(htmlDom);
     }
 
+    function addEvent(caller, eventType, handlerName) {
+        caller.addEventListener(eventType, handlerName);
+    }
+
+    function initializeMainSite() {
+        var config = document.getElementById('configuration'),
+            logo = document.getElementById('logo'),
+            search = document.getElementById('search');
+
+
+    }
 
     // Declaration of handler-functions
     function moveToMainSite() {
         constructHTML(bodyTagElement, htmlMainmenu);
+        initializeMainSite();
         selfDestructor(this, 'click', moveToMainSite);
     }
+
+
 
     // Initialize start-variables for html manipulation
     bodyTagElement = document.getElementsByTagName('body');
@@ -84,13 +98,7 @@
     ".parseToDOM();
 
 
-
-
-
-
-    // Initialize event handler
+    // Initialize start handler
     htmlStartLogo.addEventListener('click', moveToMainSite());
-
-
 
 }());
