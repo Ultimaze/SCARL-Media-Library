@@ -1,5 +1,4 @@
 "use strict";
-
 /*
     Created by SCARL
 
@@ -13,14 +12,10 @@
 
 //  Initialization
 (function () {
-
     //  Declaration of Vriables
-    var htmlStartSite,
-        htmlImpressumSiteBodyToSection,
-        htmlLibraryBodyToSection,
-        htmlVideoLibraryPlayerSiteBody,
-        htmlAudioLibraryPlayerSiteBody,
-        htmlStartLogo;
+    var htmlStartLogo,
+        htmlMainmenu,
+        bodyTagElement;
 
     //  Declaration of Functions
     function removeChildFromParent(child, parent) {
@@ -29,19 +24,72 @@
         parent.removeChild(clonedChild);
     }
 
+    //  Declaration of prototype-Functions
+    String.prototype.parseToDOM = function () {
+        var dom,
+            fragDOM,
+            parentNode,
+            childNode;
 
-    // Initialize variables for html body and section
-    htmlStartSite = '';
-    htmlLibraryBodyToSection = '';
-    htmlImpressumSiteBodyToSection = '';
-    htmlVideoLibraryPlayerSiteBody = '';
-    htmlAudioLibraryPlayerSiteBody = '';
+        dom = document;
+        parentNode = dom.createElement("div");
+        fragDOM = dom.createDocumentFragment();
 
-    // Initialize variables for DOM-Selection
+        parentNode.innerHTML(this);
+
+        while (childNode = parentNode.firstChild) {fragDOM.appendChild(childNode); }
+        return fragDOM;
+    };
+
+    //  Declaration of helper-Functions
+    function selfDestructor(caller, handlerType, handlerName) {
+        // delete handler
+        caller.removeEventListener(handlerType, handlerName);
+        // delete node
+        caller.parentNode.removeChild(caller);
+        // delete reference
+        caller = null;
+    }
+
+    function constructHTML(parent, htmlDom) {
+        parent.appendChild(htmlDom);
+    }
+
+
+    // Declaration of handler-functions
+    function moveToMainSite() {
+        constructHTML(bodyTagElement, htmlMainmenu);
+        selfDestructor(this, 'click', moveToMainSite);
+    }
+
+    // Initialize start-variables for html manipulation
+    bodyTagElement = document.getElementsByTagName('body');
+
     htmlStartLogo = document.getElementById("startlogo");
 
-    // Initialize event handler
+    // Initialize variables for html construction
+    // **NAVIGATION**
+    htmlMainmenu = "\
+    <div class='top'>\
+            <div>\
+                <img id='configuration' src='images/einstellung.png' alt='configuration'/>\
+            </div>\
+            <div>\
+                <img id='logo' src='images/scarl.png' alt='SCARL @Player'/>\
+            </div>\
+            <div>\
+                <img id='search' src='images/suche.png' alt='search'/>\
+            </div>\
+        </div>\
+    ".parseToDOM();
 
+
+
+
+
+
+    // Initialize event handler
+    htmlStartLogo.addEventListener('click', moveToMainSite());
 
 
 

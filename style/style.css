@@ -54,19 +54,19 @@ body{
     top:0;
 
 }
-#einstellung,#suche,#logo{
+#configuration,#search,#logo{
     display: inline-block;
     vertical-align: middle;
     width: 10%
 }
 
 /*
-#einstellung{
+#configuration{
     width:8%;
     margin-left: 0.2%;
 
 }
-#suche{
+#search{
     width: 10%;
     margin-bottom: 1.2%;
     float: right;
