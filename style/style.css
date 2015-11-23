@@ -1,3 +1,4 @@
+
 /*
 /*Festlegung der Boxeigenschaften für alle Elemente, weil /*diese nicht vererbt werden.
 */
@@ -6,15 +7,18 @@
     box-sizing: border-box;
     margin: 0 auto;
     padding: 0;
-    border: 0px solid gold;
+    border: 0 solid gold;
 }
-
-.top div{
+nav>ul>li :first-child{
+	display: none;
+        margin-left: 10%;
+}
+nav>ul>li{
     /*mit padding vom Rand entfernen,
     durch box-sizing: borderbox,
     kann das padding angepasst werden,
     ohne daß sich die Gesamtgröße der box verändert.*/
-    padding: 3% 3%;
+    padding: 0% 0%;
     /*inline-block erlaubt, die Elemente nebeneinanderzustellen, und trotzdem Größenangaben und vertical-align zu zulassen, was sonst nur bei Blockelementen erlaubt ist.*/
     display: inline-block;
     /*eigentlich würde man denken, 3 Elemente benötigen je 33,3% Platz, aber vertikale margins kollabieren nicht, deshalb braucht man ein wenig extra Platz von 1%*/
@@ -22,21 +26,26 @@
     vertical-align: middle;
 }
 
-.top div:last-child{
+nav>ul>li:last-child{
     text-align: right;
 }
-
+hr {
+	  width: 100%;
+	  height: 3px;
+          margin: 0 auto;
+	  background: #FFF;
+    }
 
 body{
     width: 100%;
     height: 100%;
     background-color: #DADADA;
-    font-family: helvetica, arial, tahoma, sans-serif;
+    font-family: calibri, helvetica, arial, tahoma, sans-serif;
     font-size: 100.1%;
     color: #FFF;
-    margin-top: 22%;
 }
 #startlogo{
+    width:50%;
     margin: auto;
     position: absolute;
     top: 0;
@@ -44,32 +53,25 @@ body{
     bottom:0;
     right:0;
 }
+/* HEADER */
 
-.top{
+nav{
     position:fixed;
     width:100%;
     background-color: #B2B2B2;
-    padding: 4.5%;
+    padding: 6%;
     left:0;
     top:0;
-
 }
-#configuration,#search,#logo{
+#einstellung,#suche,#logo{
     display: inline-block;
     vertical-align: middle;
-    width: 10%
 }
-
-/*
-#configuration{
-    width:8%;
-    margin-left: 0.2%;
-
+#einstellung{
+    width:26%;
 }
-#search{
-    width: 10%;
-    margin-bottom: 1.2%;
-    float: right;
+#suche{
+    width: 32%;
 }
 #logo{
     width:17%;
@@ -80,40 +82,61 @@ body{
     bottom:0;
     right:0;
 }
-*/
-#logo{
-    width:17%;
-    margin: auto;
-    position: absolute;
-    top: 0;
-    left:0;
-    bottom:0;
-    right:0;
+
+/* INHALT */
+body>div{
+    padding: 0 7%;
+    margin-top: 25%;
+    /*border: solid black;*/
+}
+#neues{
+    padding:3% 3%;
+    margin-top: 5%;
+    background-color: #BEBEBE;
+    margin-bottom: 10%;
+}
+
+body>div>div{
+    background-color: #C6C6C6;
+    margin-bottom: 5%;
+}
+
+div>div>div{
+    padding: 0% 2%;
+    font-size: 70%;
+}
+
+div>div>div :first-child{
+    float: left;
+}
+.dauer{
+   text-align: right;
+}
+div img{
+    width: 100%;
 }
 
 
 
 @media only screen and (max-width: 480px)
 {
-    #startlogo{
-        width:170px;
-    }
     .inhalt{
-        margin-top: 35%;
+
     }
 }
 
 @media only screen and (max-width: 1024px) and (min-width: 481px)
 {
-    #startlogo{
-        width:370px;
-    }
     .inhalt{
-        margin-top: 35%;
+        font-size: 250%;
+
     }
 }
 @media only screen and (min-width: 480px) and (max-width : 1024px)
 and (orientation : landscape) {
+    .top{
+        background-color: red;
+    }
 
+    }
 
-}
