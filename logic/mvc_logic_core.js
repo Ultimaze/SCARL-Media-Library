@@ -70,9 +70,25 @@
     }
 
     function constructHTML(parent, htmlDom) {
-        var temp = document.createElement('div');
+        var counter, temp, tempNodeList, tempNodeListLength, child;
+        temp = document.createElement('div');
         temp.innerHTML = htmlDom;
-        parent.appendChild(temp.firstChild);
+        tempNodeList = temp.childNodes;
+        tempNodeListLength = tempNodeList.length;
+
+        /**
+        *   Important after appending a child the list
+        *   will be shorter then before !
+        **/
+
+        if (tempNodeList.length > 0) {
+            for (counter = 0; counter < tempNodeListLength; counter += 1) {
+                child = tempNodeList[0];
+                parent.appendChild(child);
+            }
+        } else {
+            parent.appendChild(tempNodeList[0]);
+        }
     }
 
     function addEvent(caller, eventType, handlerName) {
@@ -91,7 +107,7 @@
 
     // Declaration of handler-functions
     function moveToMainSite() {
-        constructHTML(bodyTagElement, htmlMainNavigation);
+        constructHTML(bodyTagElement, htmlFirstMenu);
         initializeMainSite();
         selfDestructor(this, 'click', moveToMainSite);
     }
