@@ -108,7 +108,7 @@
     // Declaration of handler-functions
     function moveToMainSite() {
         constructHTML(bodyTagElement, htmlFirstMenu);
-        initializeMainSite();
+
         selfDestructor(this, 'click', moveToMainSite);
     }
 
