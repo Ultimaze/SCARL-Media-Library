@@ -19,7 +19,7 @@
         bodyTagElement;
 
      // Initialize start-variables for html manipulation
-    bodyTagElement = document.getElementsByTagName('body');
+    bodyTagElement = document.body;
 
     htmlStartLogo = document.getElementById("startlogo");
 
