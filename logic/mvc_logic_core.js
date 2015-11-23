@@ -25,32 +25,32 @@
 
     // Initialize variables for html construction
     // **NAVIGATION**
-    htmlMainNavigation = '' +
-    '<div class="top">' +
-            '<div>' +
-                '<img id="einstellung" src="images/einstellung.png" alt="configuration"/>' +
-            '</div>' +
-            '<div>' +
-                '<img id="logo" src="images/scarl.png" alt="SCARL @Player"/>' +
-            '</div>' +
-            '<div>' +
-                '<img id="suche" src="images/suche.png" alt="search"/>' +
-            '</div>' +
-        '</div>';
+    htmlMainNavigation = '\
+<div class="top">\
+<div>\
+<img id="einstellung" src="images/einstellung.png" alt="configuration"/>\
+</div>\
+<div>\
+<img id="logo" src="images/scarl.png" alt="SCARL @Player"/>\
+</div>\
+<div>\
+<img id="suche" src="images/suche.png" alt="search"/>\
+</div>\
+</div>';
 
-    htmlFirstMenu = '' +
-            '<p>@Mediathek</p>' +
-            '<hr>' +
-                '<p>Musik</p>' +
-                '<p>Videoclip</p>' +
-            '<hr>' +
-            '<img id="facebook" src="" alt="facebook"/>' +
-            '<img id="twitter" src="" alt="twitter"/>' +
-            '<img id="instagram" src="" alt="instagram"/>' +
-            '<img id="tumblr" src="" alt="tumblr"/>' +
-            '<br>' +
-            '<p>Datenschutz</p>' +
-            '<p>Impressum</p>';
+    htmlFirstMenu = '\
+<p>@Mediathek</p>\
+<hr>\
+<p>Musik</p>\
+<p>Videoclip</p>\
+<hr>\
+<img id="facebook" src="" alt="facebook"/>\
+<img id="twitter" src="" alt="twitter"/>\
+<img id="instagram" src="" alt="instagram"/>\
+<img id="tumblr" src="" alt="tumblr"/>\
+<br>\
+<p>Datenschutz</p>\
+<p>Impressum</p>';
 
 
     //  Declaration of Functions
@@ -60,24 +60,6 @@
         parent.removeChild(clonedChild);
     }
 
-    //  Declaration of prototype-Functions
-    String.prototype.parseToDOM = function () {
-        var dom,
-            fragDOM,
-            parentNode,
-            childNode;
-
-        dom = document;
-        parentNode = dom.createElement("div");
-        fragDOM = dom.createDocumentFragment();
-
-        parentNode.innerHTML = this;
-
-        while (childNode = parentNode.firstChild) {fragDOM.appendChild(childNode); }
-        return fragDOM;
-    };
-
-    //  Declaration of helper-Functions
     function selfDestructor(caller, handlerType, handlerName) {
         // delete handler
         caller.removeEventListener(handlerType, handlerName);
@@ -88,7 +70,9 @@
     }
 
     function constructHTML(parent, htmlDom) {
-        parent.appendChild(htmlDom.parseToDOM());
+        var temp = document.createElement('div');
+        temp.innerHTML = htmlDom;
+        parent.appendChild(temp.firstChild);
     }
 
     function addEvent(caller, eventType, handlerName) {
@@ -102,6 +86,8 @@
 
 
     }
+
+
 
     // Declaration of handler-functions
     function moveToMainSite() {
