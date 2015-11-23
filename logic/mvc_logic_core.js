@@ -24,19 +24,34 @@
 
     // Initialize variables for html construction
     // **NAVIGATION**
-    htmlMainmenu = "\
-    <div class='top'>\
-            <div>\
-                <img id='einstellung' src='images/einstellung.png' alt='configuration'/>\
-            </div>\
-            <div>\
-                <img id='logo' src='images/scarl.png' alt='SCARL @Player'/>\
-            </div>\
-            <div>\
-                <img id='suche' src='images/suche.png' alt='search'/>\
-            </div>\
-        </div>\
-    ";
+    htmlMainNavigation = " +
+    "<div class='top'>" +
+            "<div>" +
+                "<img id='einstellung' src='images/einstellung.png' alt='configuration'/>" +
+            "</div>" +
+            "<div>" +
+                "<img id='logo' src='images/scarl.png' alt='SCARL @Player'/>" +
+            "</div>" +
+            "<div>" +
+                "<img id='suche' src='images/suche.png' alt='search'/>" +
+            "</div>" +
+        "</div>" +
+    ".parseToDOM();
+
+    htmlFirstMenu = " +
+            "<p>@Mediathek</p>" +
+            "<hr>" +
+                "<p>Musik</p>" +
+                "<p>Videoclip</p>" +
+            "<hr>" +
+            "<img id="facebook" src="" alt="facebook"/>" +
+            "<img id="twitter" src="" alt="twitter"/>" +
+            "<img id="instagram" src="" alt="instagram"/>" +
+            "<img id="tumblr" src="" alt="tumblr"/>" +
+            "<br>" +
+            "<p>Datenschutz</p>" +
+            "<p>Impressum</p>".parseToDOM();
+
 
     //  Declaration of Functions
     function removeChildFromParent(child, parent) {
