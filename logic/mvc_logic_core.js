@@ -98,6 +98,6 @@
 
 
     // Initialize start handler
-    htmlStartLogo.addEventListener('click', moveToMainSite());
+    addEvent(htmlStartLogo, "click", moveToMainSite);
 
 }());
