@@ -36,7 +36,7 @@
             '<div>' +
                 '<img id="suche" src="images/suche.png" alt="search"/>' +
             '</div>' +
-        '</div>'.parseToDOM();
+        '</div>';
 
     htmlFirstMenu = '' +
             '<p>@Mediathek</p>' +
@@ -50,7 +50,7 @@
             '<img id="tumblr" src="" alt="tumblr"/>' +
             '<br>' +
             '<p>Datenschutz</p>' +
-            '<p>Impressum</p>'.parseToDOM();
+            '<p>Impressum</p>';
 
 
     //  Declaration of Functions
@@ -88,7 +88,7 @@
     }
 
     function constructHTML(parent, htmlDom) {
-        parent.appendChild(htmlDom);
+        parent.appendChild(htmlDom.parseToDOM());
     }
 
     function addEvent(caller, eventType, handlerName) {
