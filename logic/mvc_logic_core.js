@@ -17,6 +17,27 @@
         htmlMainmenu,
         bodyTagElement;
 
+     // Initialize start-variables for html manipulation
+    bodyTagElement = document.getElementsByTagName('body');
+
+    htmlStartLogo = document.getElementById("startlogo");
+
+    // Initialize variables for html construction
+    // **NAVIGATION**
+    htmlMainmenu = "\
+    <div class='top'>\
+            <div>\
+                <img id='configuration' src='images/einstellung.png' alt='configuration'/>\
+            </div>\
+            <div>\
+                <img id='logo' src='images/scarl.png' alt='SCARL @Player'/>\
+            </div>\
+            <div>\
+                <img id='search' src='images/suche.png' alt='search'/>\
+            </div>\
+        </div>\
+    ";
+
     //  Declaration of Functions
     function removeChildFromParent(child, parent) {
         var clonedChild = document.cloneNode(child);
@@ -35,7 +56,7 @@
         parentNode = dom.createElement("div");
         fragDOM = dom.createDocumentFragment();
 
-        parentNode.innerHTML(this);
+        parentNode.innerHTML = this;
 
         while (childNode = parentNode.firstChild) {fragDOM.appendChild(childNode); }
         return fragDOM;
@@ -73,29 +94,6 @@
         initializeMainSite();
         selfDestructor(this, 'click', moveToMainSite);
     }
-
-
-
-    // Initialize start-variables for html manipulation
-    bodyTagElement = document.getElementsByTagName('body');
-
-    htmlStartLogo = document.getElementById("startlogo");
-
-    // Initialize variables for html construction
-    // **NAVIGATION**
-    htmlMainmenu = "\
-    <div class='top'>\
-            <div>\
-                <img id='configuration' src='images/einstellung.png' alt='configuration'/>\
-            </div>\
-            <div>\
-                <img id='logo' src='images/scarl.png' alt='SCARL @Player'/>\
-            </div>\
-            <div>\
-                <img id='search' src='images/suche.png' alt='search'/>\
-            </div>\
-        </div>\
-    ".parseToDOM();
 
 
     // Initialize start handler
