@@ -27,13 +27,13 @@
     htmlMainmenu = "\
     <div class='top'>\
             <div>\
-                <img id='configuration' src='images/einstellung.png' alt='configuration'/>\
+                <img id='einstellung' src='images/einstellung.png' alt='configuration'/>\
             </div>\
             <div>\
                 <img id='logo' src='images/scarl.png' alt='SCARL @Player'/>\
             </div>\
             <div>\
-                <img id='search' src='images/suche.png' alt='search'/>\
+                <img id='suche' src='images/suche.png' alt='search'/>\
             </div>\
         </div>\
     ";
