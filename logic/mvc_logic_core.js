@@ -103,7 +103,6 @@
         } else {
             parent.appendChild(tempNodeList[0]);
         }
-        console.log("parent.innerHTML: " + parent.innerHTML);
     }
 
     function addEvent(caller, eventType, handlerName) {
