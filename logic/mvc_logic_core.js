@@ -39,18 +39,32 @@
 </div>';
 
     htmlFirstMenu = '\
-<p>@Mediathek</p>\
+<header>\
+<img id="menuscarl" src="Bilder/menuscarl.png" alt="SCARL @Player"  />\
+</header>\
 <hr>\
-<p>Musik</p>\
-<p>Videoclip</p>\
+<nav>\
+<ul>\
+<li>\
+<a href="video.html">Videothek</a>\
+</li>\
+<li>\
+<a href="audio.html">Audiothek</a>\
+</li>\
+<li>\
+<a href="impressum.html">Impressum</a>\
+</li>\
+</ul>\
+</nav>\
 <hr>\
-<img id="facebook" src="" alt="facebook"/>\
-<img id="twitter" src="" alt="twitter"/>\
-<img id="instagram" src="" alt="instagram"/>\
-<img id="tumblr" src="" alt="tumblr"/>\
 <br>\
-<p>Datenschutz</p>\
-<p>Impressum</p>';
+<img id="facebook" src="images/fb.png" alt="facebook"/>\
+<img id="twitter" src="images/twitter.png" alt="twitter"/>\
+<img id="instagram" src="images/instagram.png" alt="instagram"/>\
+<img id="tumblr" src="images/tumblr.png" alt="tumblr"/>\
+<footer>\
+<a href="datenschutz.html">Datenschutz</a>\
+</footer>';
 
 
     //  Declaration of Functions
