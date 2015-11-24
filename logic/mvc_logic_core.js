@@ -95,12 +95,10 @@
         caller.addEventListener(eventType, handlerName);
     }
 
-    function initializeMainSite() {
+    function initializeFirstMenu() {
         var config = document.getElementById('configuration'),
             logo = document.getElementById('logo'),
             search = document.getElementById('search');
-
-
     }
 
 
