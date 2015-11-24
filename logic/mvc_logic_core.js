@@ -40,7 +40,7 @@
 
     htmlFirstMenu = '\
 <header>\
-<img id="menuscarl" src="Bilder/menuscarl.png" alt="SCARL @Player"  />\
+<img id="menuscarl" src="images/menuscarl.png" alt="SCARL @Player"  />\
 </header>\
 <hr>\
 <nav>\
@@ -103,6 +103,7 @@
         } else {
             parent.appendChild(tempNodeList[0]);
         }
+        console.log("parent.innerHTML: " + parent.innerHTML);
     }
 
     function addEvent(caller, eventType, handlerName) {
