@@ -81,7 +81,7 @@
         *   will be shorter then before !
         **/
 
-        if (tempNodeList.length > 0) {
+        if (tempNodeList.length > 1) {
             for (counter = 0; counter < tempNodeListLength; counter += 1) {
                 child = tempNodeList[0];
                 parent.appendChild(child);
