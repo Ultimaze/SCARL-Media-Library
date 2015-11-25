@@ -90,6 +90,7 @@
         tempNodeList = temp.childNodes;
         tempNodeListLength = tempNodeList.length;
 
+
         /**
         *   Important after appending a child the list
         *   will be shorter then before !
@@ -118,14 +119,14 @@
 
 
     // Declaration of handler-functions
-    function moveToMainSite() {
+    function moveToFirstMenu() {
         constructHTML(bodyTagElement, htmlFirstMenu);
 
-        selfDestructor(this, 'click', moveToMainSite);
+        selfDestructor(this, 'click', moveToFirstMenu);
     }
 
 
     // Initialize start handler
-    addEvent(htmlStartLogo, "click", moveToMainSite);
+    addEvent(htmlStartLogo, "click", moveToFirstMenu);
 
 }());
