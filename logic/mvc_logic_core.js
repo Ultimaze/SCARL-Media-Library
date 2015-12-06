@@ -83,10 +83,10 @@
         caller = null;
     }
 
-    function constructHTML(parent, htmlDom) {
+    function constructHTML(parent, domString) {
         var counter, temp, tempNodeList, tempNodeListLength, child;
         temp = document.createElement('div');
-        temp.innerHTML = htmlDom;
+        temp.innerHTML = domString;
         tempNodeList = temp.childNodes;
         tempNodeListLength = tempNodeList.length;
 
@@ -104,6 +104,20 @@
         } else {
             parent.appendChild(tempNodeList[0]);
         }
+    }
+
+    function getVideoHTML() {
+        // get data out of database
+
+        // work on respone
+
+        // build the html base
+
+        // iterate throught data
+
+        // build the player
+
+        // return a vaild html dom string
     }
 
     function addEvent(caller, eventType, handlerName) {
@@ -129,6 +143,9 @@
 
     function buildVideoLibrary() {
         console.log("construct");
+
+        var domString = getVideoHTML();
+
     }
 
 
