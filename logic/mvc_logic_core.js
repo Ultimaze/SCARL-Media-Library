@@ -45,14 +45,14 @@
 <hr>\
 <nav>\
 <ul>\
-<li>\
-<a href="video.html">Videothek</a>\
+<li id="vidPath">\
+<p>Videothek</p>\
 </li>\
-<li>\
-<a href="audio.html">Audiothek</a>\
+<li id="audPath">\
+<p>Audiothek</p>\
 </li>\
-<li>\
-<a href="impressum.html">Impressum</a>\
+<li id="impPath">\
+<p>Impressum</p>\
 </li>\
 </ul>\
 </nav>\
@@ -63,7 +63,7 @@
 <img id="instagram" src="images/instagram.png" alt="instagram"/>\
 <img id="tumblr" src="images/tumblr.png" alt="tumblr"/>\
 <footer>\
-<a href="datenschutz.html">Datenschutz</a>\
+<p id="datPath">Datenschutz</p>\
 </footer>';
 
 
@@ -110,23 +110,28 @@
         caller.addEventListener(eventType, handlerName);
     }
 
+    // Initializer functions
     function initializeFirstMenu() {
-        var config = document.getElementById('configuration'),
-            logo = document.getElementById('logo'),
-            search = document.getElementById('search');
+        var vidTLink = document.getElementById("vidPath"),
+            audTLink = document.getElementById("audPath"),
+            impTLink = document.getElementById("impPath");
+
+        addEvent(vidTLink, "click", buildVideoLibrary);
+
     }
 
-
-
-    // Declaration of handler-functions
+    // Handler functions
     function moveToFirstMenu() {
         constructHTML(bodyTagElement, htmlFirstMenu);
-
+        initializeFirstMenu();
         selfDestructor(this, 'click', moveToFirstMenu);
+    }
+
+    function buildVideoLibrary() {
+        console.log("construct");
     }
 
 
     // Initialize start handler
     addEvent(htmlStartLogo, "click", moveToFirstMenu);
-
 }());
