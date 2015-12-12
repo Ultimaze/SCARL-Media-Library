@@ -22,6 +22,7 @@
     var html_1stPage_Starter,
         html_2ndPage_Menu,
         html_3rdPage_VideoLibrary,
+        html_3rdPage_VideoLibrary_HardCode,
       //  html_3rdPage_AudioLibrary,
         bodyTagElement;
 
@@ -68,6 +69,9 @@
 
     // the base of the video library
     html_3rdPage_VideoLibrary = '';
+
+    // temporary hard coded version of video library
+    html_3rdPage_VideoLibrary_HardCode = '';
 
 
     /************************************************************
@@ -219,6 +223,15 @@
     ************************************************************/
 
 
+    function initialize3rdPageVideoLibrary() {
+
+
+        // do something
+
+
+    }
+
+
     function moveTo3rdPageVideoLibrary() {
 
 
@@ -245,9 +258,8 @@
 
         addEvent(vidTLink, "click", function () {
 
-
-            moveTo3rdPageVideoLibrary('video');
-
+            // moveTo3rdPageVideoLibrary('video');
+            constructHTMLatParent(bodyTagElement, html_3rdPage_VideoLibrary_HardCode);
 
         });
 
