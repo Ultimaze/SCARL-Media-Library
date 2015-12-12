@@ -220,6 +220,14 @@
     ************************************************************/
 
 
+    function initialize3rdPageImpressum() {
+
+
+        // do init impressum
+
+
+    }
+
     function initialize3rdPageVideoLibrary() {
 
 
@@ -241,6 +249,18 @@
         // initialize3rdPageVideoLibrary();
 
         //stackCleaner(this, 'click', moveTo3rdPageVideoLibrary);
+
+
+    }
+
+    function moveTo3rdPageImpressum() {
+
+
+        constructHTMLatParent(bodyTagElement, html_3rdPage_Impressum);
+
+
+
+        stackCleaner(this, 'click', moveTo3rdPageImpressum);
 
 
     }
