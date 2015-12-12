@@ -3,7 +3,7 @@
     Created by SCARL
 
     Table of content
-    line 015-000: Initialization
+    line 014-000: Initialization
         line 000-000:
         line 000-000:
         line 000-000:
@@ -12,33 +12,33 @@
 
 //  Initialization
 (function () {
-    //  Declaration of Vriables
-    var htmlStartLogo,
-        htmlMainNavigation,
-        htmlFirstMenu,
+
+
+    /************************************************************
+    *   DECLARATION OF GLOBAL VARIABLES
+    ************************************************************/
+
+
+    var html_1stPage_Starter,
+        html_2ndPage_Menu,
+        html_3rdPage_VideoLibrary,
+      //  html_3rdPage_AudioLibrary,
         bodyTagElement;
 
-     // Initialize start-variables for html manipulation
+
+    /************************************************************
+    *   INITIALIZATION OF GLOBAL VARIABLES
+    ************************************************************/
+
+
+    // html body
     bodyTagElement = document.body;
 
-    htmlStartLogo = document.getElementById("startlogo");
+    // index.html start site
+    html_1stPage_Starter = document.getElementById("startlogo");
 
-    // Initialize variables for html construction
-    // **NAVIGATION**
-    htmlMainNavigation = '\
-<div class="top">\
-<div>\
-<img id="einstellung" src="images/einstellung.png" alt="configuration"/>\
-</div>\
-<div>\
-<img id="logo" src="images/scarl.png" alt="SCARL @Player"/>\
-</div>\
-<div>\
-<img id="suche" src="images/suche.png" alt="search"/>\
-</div>\
-</div>';
-
-    htmlFirstMenu = '\
+    // This will be the first menu to reach after the start screen
+    html_2ndPage_Menu = '\
 <header>\
 <img id="menuscarl" src="images/menuscarl.png" alt="SCARL @Player"  />\
 </header>\
@@ -66,89 +66,215 @@
 <p id="datPath">Datenschutz</p>\
 </footer>';
 
+    // the base of the video library
+    html_3rdPage_VideoLibrary = '';
 
-    //  Declaration of Functions
-    function removeChildFromParent(child, parent) {
-        var clonedChild = document.cloneNode(child);
-        parent.replaceChild(clonedChild, child);
-        parent.removeChild(clonedChild);
-    }
 
-    function selfDestructor(caller, handlerType, handlerName) {
+    /************************************************************
+    *   DECLARATION OF HELPER-FUNCTIONS
+    ************************************************************/
+
+
+    function stackCleaner(caller, handlerType, handlerName) {
+
+
+        var that = caller;
+
         // delete handler
-        caller.removeEventListener(handlerType, handlerName);
+        that.removeEventListener(handlerType, handlerName);
+
         // delete node
-        caller.parentNode.removeChild(caller);
+        that.parentNode.removeChild(that);
+
         // delete reference
-        caller = null;
+        that = null;
+
+
     }
 
-    function constructHTML(parent, domString) {
-        var counter, temp, tempNodeList, tempNodeListLength, child;
+
+    function requestMaker(targetPHP) {
+
+
+        var xhttp = new XMLHttpRequest(),
+            response = [false, ''],
+            phpAwaker = targetPHP;
+
+        xhttp.onreadystatechange = function () {
+            if (xhttp.readyState === 4 && xhttp.status === 200) {
+
+                response[1] = xhttp.responseText;
+
+            } else {
+
+                response[1] = xhttp.statusText;
+
+            }
+        };
+
+        xhttp.open("POST", phpAwaker, true);
+
+        xhttp.send();
+
+        return response;
+
+
+    }
+
+
+    function fillLibraryString(httpResponse) {
+
+
+        console.log("HTTP-RESPONSE: " + httpResponse);
+
+
+    }
+
+
+    function constructHTMLatParent(parent, domString) {
+
+
+        var counter,
+            temp,
+            tempNodeList,
+            tempNodeListLength,
+            child;
+
         temp = document.createElement('div');
+
         temp.innerHTML = domString;
+
         tempNodeList = temp.childNodes;
+
         tempNodeListLength = tempNodeList.length;
-
-
-        /**
-        *   Important after appending a child the list
-        *   will be shorter then before !
-        **/
 
         if (tempNodeList.length > 1) {
             for (counter = 0; counter < tempNodeListLength; counter += 1) {
+
                 child = tempNodeList[0];
+
                 parent.appendChild(child);
+
             }
         } else {
+
             parent.appendChild(tempNodeList[0]);
+
         }
+
+
     }
 
-    function getVideoHTML() {
-        // get data out of database
 
-        // work on respone
+    function constructHTMLLibrary(keyword) {
 
-        // build the html base
 
-        // iterate throught data
+        var response,
+            domString;
 
-        // build the player
+        if (keyword === 'video') {
 
-        // return a vaild html dom string
+            console.log("video type library was found !!!");
+
+            response = requestMaker("getAllVideos.php");
+
+            if (response[0]) {
+
+                domString = fillLibraryString(response[1]);
+
+            } else {
+
+                console.log("ERR: CONNECTION TO SERVER ");
+
+                console.log("ERR-TEXT: " + response[1]);
+
+            }
+        } else if (keyword === 'audio') {
+
+            console.log("audio type library was found !!!");
+
+        } else {
+
+            console.log("invalid type of library!!!");
+
+        }
+
+        return domString;
+
+
     }
+
 
     function addEvent(caller, eventType, handlerName) {
+
+
         caller.addEventListener(eventType, handlerName);
+
+
     }
 
-    // Initializer functions
-    function initializeFirstMenu() {
+
+    /************************************************************
+    *   DECLARATION OF HANDLER-FUNCTIONS
+    ************************************************************/
+
+
+    function moveTo3rdPageVideoLibrary() {
+
+
+        var keyword = 'video',
+            domString = constructHTMLLibrary(keyword);
+
+        constructHTMLatParent(bodyTagElement, domString);
+
+        // initialize3rdPageVideoLibrary();
+
+        //stackCleaner(this, 'click', moveTo3rdPageVideoLibrary);
+
+
+    }
+
+
+    // initialize the new constructed html site
+    function initialize2ndPage() {
+
+
         var vidTLink = document.getElementById("vidPath"),
             audTLink = document.getElementById("audPath"),
             impTLink = document.getElementById("impPath");
 
-        addEvent(vidTLink, "click", buildVideoLibrary);
+        addEvent(vidTLink, "click", function () {
 
-    }
 
-    // Handler functions
-    function moveToFirstMenu() {
-        constructHTML(bodyTagElement, htmlFirstMenu);
-        initializeFirstMenu();
-        selfDestructor(this, 'click', moveToFirstMenu);
-    }
+            moveTo3rdPageVideoLibrary('video');
 
-    function buildVideoLibrary() {
-        console.log("construct");
 
-        var domString = getVideoHTML();
+        });
+
 
     }
 
 
-    // Initialize start handler
-    addEvent(htmlStartLogo, "click", moveToFirstMenu);
+    // first aktive handler
+    function moveTo2ndPage() {
+
+
+        constructHTMLatParent(bodyTagElement, html_2ndPage_Menu);
+
+        initialize2ndPage();
+
+        stackCleaner(this, 'click', moveTo2ndPage);
+
+
+    }
+
+
+     /************************************************************
+    *   START WITH FIRST HANDLER
+    ************************************************************/
+
+
+    addEvent(html_1stPage_Starter, "click", moveTo2ndPage);
+
+
 }());
