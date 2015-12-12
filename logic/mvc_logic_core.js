@@ -226,7 +226,8 @@
     function initialize3rdPageVideoLibrary() {
 
 
-        // do something
+        // do init navigaton
+        // delegation for vids div
 
 
     }
@@ -258,8 +259,25 @@
 
         addEvent(vidTLink, "click", function () {
 
-            // moveTo3rdPageVideoLibrary('video');
-            constructHTMLatParent(bodyTagElement, html_3rdPage_VideoLibrary_HardCode);
+
+            //moveTo3rdPageVideoLibrary('video');
+            console.log("Fuck You!!!");
+
+        });
+
+        addEvent(audTLink, "click", function () {
+
+
+            console.log("Audio Libaray was not implemented yet !");
+
+
+        });
+
+        addEvent(impTLink, "click", function () {
+
+
+            console.log("Impressum was not implemented yet !");
+
 
         });
 
