@@ -22,7 +22,7 @@
     var html_1stPage_Starter,
         html_2ndPage_Menu,
         html_3rdPage_VideoLibrary,
-        html_3rdPage_VideoLibrary_HardCode,
+        html_3rdPage_Impressum,
       //  html_3rdPage_AudioLibrary,
         bodyTagElement;
 
@@ -67,11 +67,8 @@
 <p id="datPath">Datenschutz</p>\
 </footer>';
 
-    // the base of the video library
-    html_3rdPage_VideoLibrary = '';
-
-    // temporary hard coded version of video library
-    html_3rdPage_VideoLibrary_HardCode = '';
+    // whole impressum site
+    html_3rdPage_Impressum = '';
 
 
     /************************************************************
