@@ -174,21 +174,6 @@
 
     }
 
-/*************************************************************
-    function stackCleaner(caller, handlerType, handlerName) {
-
-
-        var that = caller;
-
-        that.removeEventListener(handlerType, handlerName);
-
-        that.parentNode.removeChild(that);
-
-        that = null;
-
-
-    }
-****************************************************************/
 
     function requestMaker(targetPHP) {
 
