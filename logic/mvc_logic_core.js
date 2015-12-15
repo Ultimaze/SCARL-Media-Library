@@ -366,7 +366,6 @@
     }
 
 
-    // initialize the new constructed html site
     function initialize2ndPage() {
 
 
@@ -396,7 +395,6 @@
     }
 
 
-    // first aktive handler
     function moveTo2ndPage() {
 
 
