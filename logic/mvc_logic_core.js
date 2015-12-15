@@ -172,13 +172,10 @@ Werbeinformationen, etwa durch Spam-Mails, vor.\
 
         var that = caller;
 
-        // delete handler
         that.removeEventListener(handlerType, handlerName);
 
-        // delete node
         that.parentNode.removeChild(that);
 
-        // delete reference
         that = null;
 
 
