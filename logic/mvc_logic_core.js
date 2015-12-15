@@ -349,6 +349,8 @@ Werbeinformationen, etwa durch Spam-Mails, vor.\
 
         constructHTMLatParent(bodyTagElement, html_3rdPage_Impressum);
 
+        initialize3rdPageImpressum();
+
         stackCleaner(this, 'click', moveTo3rdPageImpressum);
 
 
