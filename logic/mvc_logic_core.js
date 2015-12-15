@@ -312,6 +312,10 @@ Werbeinformationen, etwa durch Spam-Mails, vor.\
 
 
         // do init impressum
+        var logo = document.getElementById("logo"),
+            search = document.getElementById("suche");
+
+        addEvent(logo, "click", html_2ndPage_Menu);
 
 
     }
