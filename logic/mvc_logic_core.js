@@ -342,14 +342,12 @@ Werbeinformationen, etwa durch Spam-Mails, vor.\
 
     }
 
-    function moveTo3rdPageImpressum(this) {
+    function moveTo3rdPageImpressum() {
+
 
         cleanNode(bodyTagElement);
 
         constructHTMLatParent(bodyTagElement, html_3rdPage_Impressum);
-
-        console.log("Baue Impressum ...");
-        console.log("this: " + this);
 
         stackCleaner(this, 'click', moveTo3rdPageImpressum);
 
