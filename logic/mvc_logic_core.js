@@ -153,11 +153,14 @@ Werbeinformationen, etwa durch Spam-Mails, vor.\
     function cleanNode(node) {
 
 
-        var node = node;
+        var node = node,
+            nodeChild;
 
         while (node.firstChild) {
 
-            node.removeChild(node.firstChild);
+            nodeChild = node.firstChild;
+
+            node.removeChild(nodeChild);
 
         }
 
