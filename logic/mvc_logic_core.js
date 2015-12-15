@@ -156,16 +156,21 @@ Werbeinformationen, etwa durch Spam-Mails, vor.\
         var node = node,
             nodeChild;
 
-        while (node.firstChild) {
+        if (node.firstChild) {
 
-            nodeChild = node.firstChild;
+            while (node.firstChild) {
 
-            node.removeChild(nodeChild);
+                nodeChild = node.firstChild;
+
+                node.removeChild(nodeChild);
+
+            }
 
         }
 
 
     }
+
 
     function stackCleaner(caller, handlerType, handlerName) {
 
@@ -315,7 +320,9 @@ Werbeinformationen, etwa durch Spam-Mails, vor.\
         var logo = document.getElementById("logo"),
             search = document.getElementById("suche");
 
-        addEvent(logo, "click", html_2ndPage_Menu);
+        console.log("logo: " + logo);
+
+        addEvent(logo, "click", moveTo2ndPage);
 
 
     }
@@ -394,6 +401,8 @@ Werbeinformationen, etwa durch Spam-Mails, vor.\
     // first aktive handler
     function moveTo2ndPage() {
 
+
+        cleanNode(bodyTagElement);
 
         constructHTMLatParent(bodyTagElement, html_2ndPage_Menu);
 
