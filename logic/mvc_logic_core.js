@@ -150,6 +150,19 @@ Werbeinformationen, etwa durch Spam-Mails, vor.\
     *   DECLARATION OF HELPER-FUNCTIONS
     ************************************************************/
 
+    function cleanNode(node) {
+
+
+        var node = node;
+
+        while (node.firstChild) {
+
+            node.removeChild(node.firstChild);
+
+        }
+
+
+    }
 
     function stackCleaner(caller, handlerType, handlerName) {
 
@@ -317,6 +330,7 @@ Werbeinformationen, etwa durch Spam-Mails, vor.\
 
 
         var keyword = 'video',
+
             domString = constructHTMLLibrary(keyword);
 
         constructHTMLatParent(bodyTagElement, domString);
@@ -328,12 +342,14 @@ Werbeinformationen, etwa durch Spam-Mails, vor.\
 
     }
 
-    function moveTo3rdPageImpressum() {
+    function moveTo3rdPageImpressum(this) {
 
+        cleanNode(bodyTagElement);
 
         constructHTMLatParent(bodyTagElement, html_3rdPage_Impressum);
 
-
+        console.log("Baue Impressum ...");
+        console.log("this: " + this);
 
         stackCleaner(this, 'click', moveTo3rdPageImpressum);
 
@@ -365,13 +381,7 @@ Werbeinformationen, etwa durch Spam-Mails, vor.\
 
         });
 
-        addEvent(impTLink, "click", function () {
-
-
-            moveTo3rdPageImpressum();
-
-
-        });
+        addEvent(impTLink, "click", moveTo3rdPageImpressum);
 
 
     }
