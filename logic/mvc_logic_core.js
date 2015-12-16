@@ -377,7 +377,7 @@
 
 
             //moveTo3rdPageVideoLibrary('video');
-            console.log("Fuck You!!!");
+            console.log("Nothing there!!!");
 
         });
 
