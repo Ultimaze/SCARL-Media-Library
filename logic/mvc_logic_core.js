@@ -42,16 +42,22 @@
     // This will be the first menu to reach after the start screen
     html_2ndPage_Menu = '' +
 '<header>' +
+        '<div id="bild">'+
     '<img id="menuscarl" src="images/menuscarl.png" alt="SCARL @Player"  />' +
+        '</div>'
 '</header>' +
-'<hr>' +
+    '<div id="navwrap">'+
 '<nav>' +
     '<ul>' +
+    '<img id="videoicon" src="images/videoicon.png" alt=""/>'+
         '<li id="vidPath">' +
             '<p>Videothek</p>' +
+    '<img src="Bilder/arrowright.png" alt=""/>'+
         '</li>' +
+     '<img id="audioicon" src="images/audioicon.png" alt=""/>'+
         '<li id="audPath">' +
             '<p>Audiothek</p>' +
+    '<img src="images/arrowright.png" alt=""/>'+
         '</li>' +
         '<li id="impPath">' +
             '<p>Impressum</p>' +
@@ -60,7 +66,7 @@
 '</nav>' +
 '<hr>' +
 '<br>' +
-'<img id="facebook" src="images/fb.png" alt="facebook"/>' +
+'<img id="facebook" src="images/facebook.png" alt="facebook"/>' +
 '<img id="twitter" src="images/twitter.png" alt="twitter"/>' +
 '<img id="instagram" src="images/instagram.png" alt="instagram"/>' +
 '<img id="tumblr" src="images/tumblr.png" alt="tumblr"/>' +
