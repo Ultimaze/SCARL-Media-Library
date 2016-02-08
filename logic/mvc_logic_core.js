@@ -44,7 +44,7 @@
 '<header>' +
         '<div id="bild">'+
     '<img id="menuscarl" src="images/menuscarl.png" alt="SCARL @Player"  />' +
-        '</div>'
+        '</div>'+
 '</header>' +
     '<div id="navwrap">'+
 '<nav>' +
