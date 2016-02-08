@@ -77,20 +77,22 @@ header>#bild>img{
     margin-left: 5%;
     float: left;
     background-color: blue;
+    margin-top: 1%;
 }
 
 nav>ul>li>p{
 
     text-decoration: none;
     font-size: 180.1%;
-    width: 30%;
+    width: 40%;
+
 }
 
 #navwrap>nav>ul>li>img:last-child{
    background-color: red;
     float:right;
     width: 5%;
-    margin-top: -10%;
+    margin-top: -11%;
 }
 
 #navwrap>nav>ul> :first-child{
@@ -254,6 +256,7 @@ div img{
     }
     nav>ul>li>p{
         font-size: 120%;
+        width: 20%;
     }
     #navwrap>nav>ul>li{
         padding: 5% 5% 1% 2%;
@@ -261,9 +264,10 @@ div img{
     }
     #navwrap>nav>ul>li>img:first-child{
         width: 4%;
+        margin-top: 0%;
     }
     #navwrap>nav>ul>li>img:last-child{
-        margin-top: 1%;
+        margin-top: -5%;
         float:right;
         width: 2%;
     }
@@ -307,6 +311,7 @@ and (orientation : landscape) {
     }
     nav>ul>li>p{
         font-size: 300%;
+        width: 20%;
     }
     #navwrap>nav>ul>li{
         padding: 4% 5% 1% 2%;
@@ -319,6 +324,7 @@ and (orientation : landscape) {
         margin-top: 1%;
         float:right;
         width: 2%;
+        margin-top: -5%;
     }
     footer>div>img{
         width: 18%;
@@ -354,6 +360,7 @@ and (orientation : landscape) {
     /*Menu*/
     nav>ul>li>p{
         font-size: 200%;
+        width: 40%;
     }
     #navwrap>nav>ul>li>img:last-child{
         width: 4%;
@@ -403,11 +410,13 @@ and (orientation : landscape) {
     }
     #navwrap>nav>ul>li>img:first-child{
         width: 4%;
+        margin-top: 0%;
     }
     #navwrap>nav>ul>li>img:last-child{
         margin-top: 1%;
         float:right;
         width: 2%;
+        margin-top: -4%;
     }
     footer>div>img{
         width: 18%;
@@ -446,6 +455,7 @@ and (orientation : portrait)
     /*Menu*/
     nav>ul>li>p{
         font-size: 350%;
+        width: 40%;
     }
     footer>div>img{
         padding: 5%;
@@ -477,6 +487,7 @@ and (-webkit-device-pixel-ratio: 3) and (orientation : portrait){
     /*Menu*/
     nav>ul>li>p{
         font-size: 250%;
+        width: 40%;
     }
     #navwrap>nav>ul>li{
         padding: 12% 5% 2% 2%;
@@ -526,9 +537,10 @@ and (-webkit-device-pixel-ratio: 3) and (orientation : landscape){
     }
     #navwrap>nav>ul>li>img:first-child{
         width: 4%;
+        margin-top: 0%;
     }
     #navwrap>nav>ul>li>img:last-child{
-        margin-top: 1%;
+        margin-top:-5%;
         float:right;
         width: 2%;
     }
