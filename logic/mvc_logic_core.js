@@ -43,35 +43,50 @@
     html_2ndPage_Menu = '' +
 '<header>' +
         '<div id="bild">'+
-    '<img id="menuscarl" src="images/menuscarl.png" alt="SCARL @Player"  />' +
+    '<img id="menuscarl" src="images/scarlmenuneu.png" alt="SCARL @Player"  />' +
         '</div>'+
 '</header>' +
     '<div id="navwrap">'+
 '<nav>' +
     '<ul>' +
-    '<img id="videoicon" src="images/videoicon.png" alt=""/>'+
+
         '<li id="vidPath">' +
+
+         '<img id="videoicon" src="images/videoicon.png" alt=""/>'+
             '<p>Videothek</p>' +
-    '<img src="Bilder/arrowright.png" alt=""/>'+
+    '<img src="images/arrowright.png" alt=""/>'+
+
         '</li>' +
-     '<img id="audioicon" src="images/audioicon.png" alt=""/>'+
+
         '<li id="audPath">' +
+        '<img id="audioicon" src="images/audioicon.png" alt=""/>'+
             '<p>Audiothek</p>' +
     '<img src="images/arrowright.png" alt=""/>'+
         '</li>' +
-        '<li id="impPath">' +
-            '<p>Impressum</p>' +
+
+        '<li id="conPath">' +
+        '<img id="emailicon" src="images/email.png" alt=""/>'+
+
+            '<p>Kontakt</p>' +
+        '<img src="images/arrowright.png" alt=""/>'+
         '</li>' +
     '</ul>' +
 '</nav>' +
-'<hr>' +
-'<br>' +
+'</div>'+
+        '<div id="footerwrap">'+
+        '<footer>'+
+                '<div>'+
 '<img id="facebook" src="images/facebook.png" alt="facebook"/>' +
 '<img id="twitter" src="images/twitter.png" alt="twitter"/>' +
 '<img id="instagram" src="images/instagram.png" alt="instagram"/>' +
 '<img id="tumblr" src="images/tumblr.png" alt="tumblr"/>' +
-'<footer>' +
+         '</div>'+
+                '<br>'+
+                '<div id="daten">'+
+
+        '<p id="imgPath">Impressum</p>' +
 '<p id="datPath">Datenschutz</p>' +
+      '</div>'+
 '</footer>';
 
     html_3rdPage_Impressum = '' +
